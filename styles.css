@@ -1,0 +1,507 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5; /* Nền xám nhạt */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.main-title-container {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    max-width: 900px;
+    width: 100%;
+    padding: 25px 40px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.main-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #1a202c;
+}
+.presentation-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+}
+.slide-container {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 40px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.slide-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.section-text {
+    font-size: 1.125rem;
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.problem-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+.problem-icon {
+    flex-shrink: 0;
+    font-size: 2rem;
+    color: #4299e1;
+}
+.problem-details summary {
+    cursor: pointer;
+    font-size: 1.125rem;
+    color: #4a5568;
+    line-height: 1.6;
+    padding-bottom: 8px;
+    font-weight: 600;
+}
+.problem-details summary strong {
+    color: #2d3748;
+}
+.problem-details p {
+    font-size: 1.125rem;
+    color: #4a5568;
+    line-height: 1.6;
+}
+.problem-details ul {
+    list-style-type: disc;
+    margin-left: 25px;
+    margin-top: 10px;
+    color: #4a5568;
+}
+.problem-details ul li {
+    margin-bottom: 5px;
+}
+.problem-details ul ul {
+    list-style-type: circle;
+    margin-left: 20px;
+}
+
+/* Styles for Slide 2 components */
+.component-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+.component-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+    background-color: #f7fafc;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+.component-icon {
+    flex-shrink: 0;
+    font-size: 1.8rem;
+    color: #3182ce;
+}
+.component-text {
+    font-size: 1.05rem;
+    color: #2d3748;
+    line-height: 1.5;
+}
+.component-text strong {
+    color: #1a202c;
+}
+
+/* Styles for Slide 3 benefits */
+.benefit-category {
+    margin-bottom: 20px;
+}
+.benefit-category-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.benefit-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+.benefit-item {
+    font-size: 1.05rem;
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    padding-left: 25px; /* Thụt lề cho gạch đầu dòng */
+    position: relative;
+}
+.benefit-item::before {
+    /*content: '•';  Dấu chấm tròn */
+   /* color: #4299e1;  Màu xanh cho dấu chấm */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    left: 0;
+}
+
+/* Styles for Slide 4 Cost Estimation */
+.cost-section {
+    margin-bottom: 20px;
+}
+.cost-section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 10px;
+}
+.cost-item {
+    font-size: 1.05rem;
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 5px;
+    padding-left: 20px;
+    position: relative;
+}
+.cost-item strong {
+    color: #2d3748;
+}
+.cost-item span.bullet {
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    color: #4299e1;
+}
+.sub-cost-item {
+    font-size: 1rem;
+    color: #6a7a8a;
+    line-height: 1.5;
+    margin-left: 40px;
+    margin-bottom: 3px;
+}
+.total-cost {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-top: 20px;
+    text-align: right;
+    padding-top: 10px;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Styles for Slide 5 Deployment Plan */
+.plan-section {
+    margin-bottom: 20px;
+}
+.plan-section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 10px;
+}
+.role-list, .phase-list, .risk-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+.role-item, .phase-item, .risk-item {
+    font-size: 1.05rem;
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+.role-item::before, .phase-item::before, .risk-item::before {
+    /*content: '•';*/
+    /*color: #4299e1;*/
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    left: 0;
+}
+.phase-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+.phase-table th, .phase-table td {
+    border: 1px solid #e2e8f0;
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+}
+.phase-table th {
+    background-color: #edf2f7;
+    font-weight: 600;
+    color: #2d3748;
+}
+.phase-table tr:nth-child(even) {
+    background-color: #f7fafc;
+}
+.risk-solution {
+    font-size: 0.95rem;
+    color: #6a7a8a;
+    margin-top: 5px;
+    padding-left: 20px;
+}
+
+/* Styles for Slide 6 Business Model */
+.business-model-section {
+    margin-bottom: 20px;
+}
+.business-model-section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 10px;
+}
+.business-model-item {
+    font-size: 1.05rem;
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+.business-model-item strong {
+    color: #2d3748;
+}
+.business-model-item span.bullet {
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    color: #4299e1;
+}
+.roi-analysis-item {
+    font-size: 1rem;
+    color: #6a7a8a;
+    line-height: 1.5;
+    margin-left: 40px;
+    margin-bottom: 3px;
+}
+.roi-conclusion {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-top: 20px;
+}
+
+/* Styles for Slide 7 On-Premise Business Model */
+.on-premise-section {
+    margin-bottom: 20px;
+}
+.on-premise-section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 10px;
+}
+.on-premise-item {
+    font-size: 1.05rem;
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+.on-premise-item strong {
+    color: #2d3748;
+}
+.on-premise-item span.bullet {
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    color: #4299e1;
+}
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+.pricing-table th, .pricing-table td {
+    border: 1px solid #e2e8f0;
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+}
+.pricing-table th {
+    background-color: #edf2f7;
+    font-weight: 600;
+    color: #2d3748;
+}
+.pricing-table tr:nth-child(even) {
+    background-color: #f7fafc;
+}
+.pricing-example {
+    font-size: 1rem;
+    color: #6a7a8a;
+    line-height: 1.5;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+.total-customer-cost {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-top: 20px;
+    text-align: right;
+    padding-top: 10px;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+}
+.nav-button {
+    background-color: #4299e1;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.nav-button:hover {
+    background-color: #3182ce;
+    transform: translateY(-2px);
+}
+.nav-button:disabled {
+    background-color: #a0aec0;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.2rem;
+    }
+    .slide-title {
+        font-size: 2rem;
+    }
+    .section-text, .problem-details summary, .problem-details p, .component-text, .benefit-item, .cost-item, .sub-cost-item, .role-item, .phase-item, .risk-item, .risk-solution, .phase-table th, .phase-table td, .business-model-item, .roi-analysis-item, .on-premise-item, .pricing-table th, .pricing-table td, .pricing-example {
+        font-size: 1rem;
+    }
+    .benefit-category-title, .cost-section-title, .plan-section-title, .business-model-section-title, .on-premise-section-title {
+        font-size: 1.2rem;
+    }
+    .total-cost, .roi-conclusion, .total-customer-cost {
+        font-size: 1.1rem;
+    }
+    .slide-container, .main-title-container {
+        padding: 30px;
+    }
+    .problem-icon, .component-icon {
+        font-size: 1.5rem;
+    }
+    .nav-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    .phase-table th, .phase-table td, .pricing-table th, .pricing-table td {
+        padding: 8px;
+    }
+}
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.8rem;
+    }
+    .slide-title {
+        font-size: 1.75rem;
+    }
+    .section-text, .problem-details summary, .problem-details p, .component-text, .benefit-item, .cost-item, .sub-cost-item, .role-item, .phase-item, .risk-item, .risk-solution, .phase-table th, .phase-table td, .business-model-item, .roi-analysis-item, .on-premise-item, .pricing-table th, .pricing-table td, .pricing-example {
+        font-size: 0.95rem;
+    }
+    .benefit-category-title, .cost-section-title, .plan-section-title, .business-model-section-title, .on-premise-section-title {
+        font-size: 1.1rem;
+    }
+    .total-cost, .roi-conclusion, .total-customer-cost {
+        font-size: 1rem;
+    }
+    .slide-container, .main-title-container {
+        padding: 20px;
+    }
+    .problem-item, .component-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .problem-icon, .component-icon {
+        margin-bottom: 8px;
+    }
+    .navigation-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .phase-table, .phase-table thead, .phase-table tbody, .phase-table th, .phase-table td, .phase-table tr,
+    .pricing-table, .pricing-table thead, .pricing-table tbody, .pricing-table th, .pricing-table td, .pricing-table tr {
+        display: block;
+    }
+    .phase-table thead tr, .pricing-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    .phase-table tr, .pricing-table tr {
+        border: 1px solid #e2e8f0;
+        margin-bottom: 10px;
+    }
+    .phase-table td, .pricing-table td {
+        border: none;
+        border-bottom: 1px solid #e2e8f0;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+    .phase-table td::before, .pricing-table td::before {
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: 600;
+        color: #2d3748;
+    }
+    .phase-table td:nth-of-type(1)::before { content: "Hoạt động"; }
+    .phase-table td:nth-of-type(2)::before { content: "Người thực hiện"; }
+    .phase-table td:nth-of-type(3)::before { content: "Kết quả đầu ra"; }
+
+    .pricing-table td:nth-of-type(1)::before { content: "Bậc (Tier)"; }
+    .pricing-table td:nth-of-type(2)::before { content: "Số lượng Agent"; }
+    .pricing-table td:nth-of-type(3)::before { content: "Đơn giá / Agent (Ước tính)"; }
+    .pricing-table td:nth-of-type(4)::before { content: "Ghi chú"; }
+}
+
+/* Thêm khoảng cách giữa các thẻ details chỉ trong slide4 */
+#slide4 details {
+    margin-bottom: 18px;
+} 

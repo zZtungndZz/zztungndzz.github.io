@@ -1,12 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-<title>HTML Tutorial</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bản trình bày: Giám sát Hiệu suất & An ninh Nội bộ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="main-title-container">
+        <h1 class="main-title">Giám sát Hiệu suất & An ninh Nội bộ</h1>
+    </div>
 
-<h1>This is a heading</h1>
-<p>This is a paragraph.</p>
+    <div class="presentation-wrapper">
+        <!-- Slide 1: Vấn đề cần giải quyết -->
+        <div id="slide1"></div>
+        <!-- Slide 2: Hệ thống Giám sát Hiệu suất & An ninh Nội bộ -->
+        <div id="slide2" class="hidden"></div>
+        <!-- Slide 3: Lợi ích mang lại khi sử dụng -->
+        <div id="slide3" class="hidden"></div>
+        <!-- Slide 4: Ước lượng Chi phí (Cost Estimation) -->
+        <div id="slide4" class="hidden"></div>
+        <!-- Slide 5: Kế hoạch triển khai -->
+        <div id="slide5" class="hidden"></div>
+        <!-- Slide 6: Mô Hình kinh doanh : Nội bộ -->
+        <div id="slide6" class="hidden"></div>
+        <!-- Slide 7: Mô hình Kinh doanh: On-Premise cho Doanh nghiệp -->
+        <div id="slide7" class="hidden"></div>
 
+        <div class="navigation-buttons">
+            <button id="prevBtn" class="nav-button" disabled>Trang trước</button>
+            <button id="nextBtn" class="nav-button">Trang sau</button>
+        </div>
+    </div>
+
+    <script>
+    // Hàm load nội dung slide từ file html vào div tương ứng
+    const slideFiles = [
+        'slide1.html',
+        'slide2.html',
+        'slide3.html',
+        'slide4.html',
+        'slide5.html',
+        'slide6.html',
+        'slide7.html'
+    ];
+    let loaded = 0;
+    slideFiles.forEach((file, idx) => {
+        fetch(file)
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('slide' + (idx + 1)).outerHTML = html;
+                loaded++;
+                if (loaded === slideFiles.length) {
+                    // Khi đã nạp xong tất cả slide, mới nạp script.js
+                    const script = document.createElement('script');
+                    script.src = 'script.js';
+                    document.body.appendChild(script);
+                }
+            });
+    });
+    </script>
 </body>
 </html>
