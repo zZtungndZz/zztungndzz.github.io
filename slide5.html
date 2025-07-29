@@ -1,8 +1,42 @@
 <div id="slide5" class="slide-container hidden">
-    <h1 class="slide-title">Kế hoạch triển khai</h1>
-    <p class="section-text">
-        Kế hoạch này sử dụng phương pháp phát triển linh hoạt (Agile), chia dự án thành các giai đoạn (Phase) lớn, và trong mỗi giai đoạn sẽ có các Sprint nhỏ (thường là 2 tuần) để quản lý công việc cụ thể.
-    </p>
+    <h1 class="slide-title">Kế hoạch triển khai giai đoạn 1</h1>
+    <div class="plan-section">
+        <h2 class="plan-section-title">Mục tiêu :</h2>
+        <ul class="role-list">
+            <li class="role-item">
+                <details>
+                    <summary><strong>Xây dựng Agent thu thập thông đầy đủ các thông tin cần thiết từ máy của người dùng.</strong></summary>
+                    - Các thông tin cần thu thập : Keylog, WebLog, Applog, ScreenLog.<br>
+                    - Chạy hoàn thoàn trong Background.<br>
+                    - Đẩy dữ liệu thu thập được lên server và tự động dọn dẹp data đã ở máy Client.<br>
+                    - Có cơ chế tự khởi động lại nếu bị người dùng tắt đi.<br>
+                    - Cài đặt dễ dàng.<br>
+                    - Cập nhật tự động.<br>
+                    - Config online.<br>
+                </details>
+            </li>
+            <li class="role-item">
+                <details>
+                    <summary><strong>Xây dựng server lưu trữ thông tin thực hiện phân tích.</strong></summary>
+                    - Đưa ra được biểu đồ thời điểm nào trong ngày nhân sự làm việc thời điểm nào không.<br>
+                    - Biểu đồ so sánh giữa các nhân sự một cách trực quan.<br>
+                    - Mức độ tập trung.<br>
+                    - Biểu đồ thời gian làm việc của nhân sự.<br>
+                    - Có thể tạo và hiển thị các nhóm nhân sự.<br>
+                    - Đặt title cho khoảng thời gian và hiển thị title đó theo timeline<br>
+                    - Biểu đồ phát triển (so sánh thời điểm hiện tại với thời gian trước đó).<br>
+                    - Gửi thông báo warning cho nhân sự nếu phát hiện hành vi thiếu tập trung ( xem video không liên quan đến công việc, truy cập và đọc các trang không liên quan.)<br>
+                    - Xuất ra được báo cáo và Leaderboard thống kê mức độ tập trung của các nhân sự hàng ngày.<br>
+                </details>
+            </li>
+            <li class="role-item">
+                <details>
+                    <summary><strong>Frontend Xây dựng giao diện quản lý trực quan.</strong></summary>
+                    - Đăng xuất, đăng nhập quản lý agent, cập nhật agent.<br>
+                </details>
+            </li>
+        </ul>
+    </div>
 
     <div class="plan-section">
         <h2 class="plan-section-title">Thành phần Đội ngũ & Vai trò</h2>
@@ -47,11 +81,11 @@
     </div>
 
     <p class="section-text">
-        <strong>Tổng Thời gian Dự kiến: ~12 Tuần (~3 tháng) cho phiên bản 1.0</strong>
+        <strong>Tổng Thời gian Dự kiến: ~10 Tuần (~2.5 tháng) cho phiên bản 1.0</strong>
     </p>
 
     <div class="plan-section">
-        <h2 class="plan-section-title">Giai đoạn 0: Nền tảng & Thiết kế (Sprint 0) - (2 Tuần)</h2>
+        <h2 class="plan-section-title">Nền tảng & Thiết kế (Sprint 0) - (Tuần 1)</h2>
         <p class="section-text"><strong>Mục tiêu:</strong> Chuẩn bị mọi thứ cần thiết trước khi viết code tính năng. Đảm bảo toàn đội có chung một tầm nhìn.</p>
         <details>
             <summary>Chi tiết công việc</summary>
@@ -65,29 +99,30 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1. Thiết kế UX/UI</td>
-                        <td>Designer</td>
-                        <td>- Wireframe cho các màn hình chính của MVP.<br>- Mockup (thiết kế chi tiết) cho màn hình Login, Dashboard tổng quan, Danh sách người dùng.<br>- Xây dựng bộ Design System cơ bản trong Figma (màu sắc, font, button...).</td>
+                        <td>1. Nghiên cứu ý thưởng.</td>
+                        <td>Project Manager</td>
+                        <td>- Xem xét khả năng thực hiện của dự án.<br>- Lên kế hoạch tổng thể.<br> - Lên ước tính chi phí</td>
                     </tr>
                     <tr>
-                        <td>2. Thiết lập Môi trường & Hạ tầng</td>
-                        <td>Dev 1 (Backend)</td>
+                        <td>2. Ước tính chi phí.</td>
+                        <td>Project Manager</td>
+                        <td>- Tính toán và lên kế hoạch rõ ràng cho chi phí phát triển.<br>- Chi phí vận hành.</td>
+                    </tr>                    
+                    <tr>
+                        <td>3. Tham khảo mô hình giá cả các sản phẩm tương tự.</td>
+                        <td>Project Manager</td>
                         <td>- Tạo repository trên Git (Server, Frontend, Agent).<br>- Thiết lập CI/CD cơ bản (ví dụ: GitHub Actions).<br>- Cài đặt và cấu hình MongoDB, Redis trên môi trường dev.<br>- Dựng project ASP.NET Core, cấu trúc folder, thiết lập logging.</td>
                     </tr>
                     <tr>
-                        <td>3. Thiết lập Môi trường Frontend/Agent</td>
-                        <td>Dev 2 (Frontend/Agent)</td>
-                        <td>- Dựng project Next.js, tích hợp thư viện UI (MUI/Antd).<br>- Dựng project Windows Service C# cơ bản, thử nghiệm chạy dưới dạng dịch vụ.</td>
+                        <td>4. Tính toán khả năng thu hồi vốn và mô hình kinh doanh.</td>
+                        <td></td>
+                        <td>- Từ các thông tin đã thu thập bên trên tính toán nựa chọn mô hình giá của sản phẩm.<br>- Mô hình kinh doanh.<br>- Khả năng thu hồi vốn</td>
                     </tr>
                     <tr>
-                        <td>4. Lập kế hoạch Kiểm thử</td>
-                        <td>Tester</td>
-                        <td>- Tạo project trên Jira/Trello.<br>- Viết Test Plan tổng thể.<br>- Chuẩn bị các Test Case ban đầu cho MVP.</td>
-                    </tr>
-                    <tr>
-                        <td>5. Họp Toàn đội</td>
-                        <td>Tất cả</td>
-                        <td>- Thống nhất về thiết kế, kiến trúc, và quy trình làm việc (cách đặt tên nhánh git, quy trình review code, báo cáo bug...).</td>
+                        <td>5. Nghiên cứu lựa chọn công nghệ.</td>
+                        <td>Dev Backend</td>
+                        <td>- Nghiên cứu lựa chọn công nghệ phù hợp để triển khai các tính năng của dự án.<br>
+                            - Xem xét các giải pháp lưu trữ (MongoDB, PostgreSQL) và lựa chọn công nghệ phù hợp (ASP.NET Core, Node.js).<br></td>
                     </tr>
                 </tbody>
             </table>
@@ -95,7 +130,7 @@
     </div>
 
     <div class="plan-section">
-        <h2 class="plan-section-title">Giai đoạn 1: Xây dựng MVP (Sản phẩm Khả dụng Tối thiểu) - (3 Tuần)</h2>
+        <h2 class="plan-section-title">Giai đoạn 1: Xây dựng MVP (Sản phẩm Khả dụng Tối thiểu) - (Tuần 2 - 3)</h2>
         <p class="section-text"><strong>Mục tiêu:</strong> Hoàn thành một luồng end-to-end: Cài Agent -> Agent gửi dữ liệu cơ bản -> Admin xem được dữ liệu trên Dashboard.</p>
         <details>
             <summary>Chi tiết công việc</summary>
@@ -111,27 +146,17 @@
                     <tr>
                         <td>Agent (MVP)</td>
                         <td>Dev 2</td>
-                        <td>- Hoàn thiện bộ cài đặt đơn giản, chạy dưới dạng Windows Service.<br>- Xây dựng tính năng giám sát ứng dụng/web và theo dõi thời gian hoạt động.<br>- Tích hợp cơ chế cache (SQLite) và gửi dữ liệu an toàn (HTTPS) lên Server.</td>
+                        <td>- Hoàn thiện bộ cài đặt đơn giản, chạy dưới dạng Windows Service.<br>- Xây dựng tính năng giám sát thời gian hoạt động.<br>- Thêm tính năng Keylogging và Giám sát hoạt động file.<br>- Tích hợp cơ chế cache (SQLite) và gửi dữ liệu an toàn (HTTPS) lên Server.</td>
                     </tr>
                     <tr>
                         <td>Server (MVP)</td>
                         <td>Dev 1</td>
-                        <td>- Xây dựng API xác thực cho Agent và Admin (Login).<br>- Xây dựng API tiếp nhận dữ liệu từ Agent, đẩy vào Redis và worker xử lý lưu vào MongoDB.<br>- Xây dựng API cung cấp dữ liệu cơ bản cho Dashboard (danh sách người dùng, log hoạt động...).</td>
+                        <td>- Xây dựng API xác thực cho Agent và Admin (Login).<br>- Xây dựng API tiếp nhận dữ liệu từ Agent, đẩy vào Redis và worker xử lý lưu vào CSDL.<br>- Xây dựng API cung cấp dữ liệu cơ bản cho Dashboard (danh sách người dùng, log hoạt động...).</td>
                     </tr>
                     <tr>
                         <td>Dashboard (MVP)</td>
                         <td>Dev 2</td>
                         <td>- Xây dựng trang Login, layout chính.<br>- Xây dựng trang Dashboard tổng quan, danh sách người dùng.<br>- Xây dựng trang chi tiết người dùng, hiển thị log hoạt động đã thu thập.</td>
-                    </tr>
-                    <tr>
-                        <td>Kiểm thử</td>
-                        <td>Tester</td>
-                        <td>- Liên tục: Test API bằng Postman ngay khi Dev 1 hoàn thành. Test từng tính năng của Agent và Dashboard.<br>- Cuối giai đoạn: Kiểm thử tích hợp toàn bộ luồng MVP.</td>
-                    </tr>
-                    <tr>
-                        <td>Thiết kế</td>
-                        <td>Designer</td>
-                        <td>- Hỗ trợ các Dev làm đúng thiết kế.<br>- Bắt đầu thiết kế cho các tính năng của Giai đoạn 2.</td>
                     </tr>
                 </tbody>
             </table>
@@ -140,7 +165,7 @@
     </div>
 
     <div class="plan-section">
-        <h2 class="plan-section-title">Giai đoạn 2: Mở rộng Tính năng Cốt lõi - (2 Tuần)</h2>
+        <h2 class="plan-section-title">Giai đoạn 2: Mở rộng Tính năng Cốt lõi - (Tuần 4 - 5)</h2>
         <p class="section-text"><strong>Mục tiêu:</strong> Thêm các tính năng giám sát quan trọng và hệ thống cảnh báo, quản lý.</p>
         <details>
             <summary>Chi tiết công việc</summary>
@@ -154,29 +179,33 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <td>Thiết kế</td>
+                        <td>Designer</td>
+                        <td>- Wireframe cho các màn hình chính của MVP.<br>
+                            - Mockup (thiết kế chi tiết) cho màn hình Login, Dashboard tổng quan, Danh sách người dùng.<br>
+                            - Xây dựng bộ Design System cơ bản trong Figma (màu sắc, font, button...).</td>
+                    </tr>
+                    <tr>
                         <td>Agent</td>
                         <td>Dev 2</td>
-                        <td>- Thêm tính năng Chụp ảnh màn hình (theo cấu hình).<br>- Thêm tính năng Keylogging và Giám sát hoạt động file.<br>- Tích hợp cơ chế nhận chính sách từ Server (Policy).</td>
+                        <td>- Thêm tính năng Chụp ảnh màn hình (theo cấu hình).<br>
+                            - Cải tiến và tối ưu hóa tính năng giám sát hoạt động web.<br>
+                            - Triển khai bộ cài đặt Agent (Đơn giản hóa việc cài đặt ).<br>
+                            - Tích hợp cơ chế nhận chính sách từ Server (Policy).</td>
                     </tr>
                     <tr>
                         <td>Server</td>
                         <td>Dev 1</td>
-                        <td>- Xây dựng API quản lý chính sách (Policy Engine).<br>- Xây dựng hệ thống cảnh báo (Alerting Engine) cơ bản (quét CSDL, gửi email).<br>- Tối ưu hóa việc lưu trữ file ảnh (có thể dùng S3 hoặc lưu trong GridFS của Mongo).</td>
+                        <td>- Xây dựng API quản lý chính sách (Policy Engine).<br>
+                            - Xây dựng hệ thống cảnh báo (Alerting Engine) cơ bản (quét CSDL, gửi email).<br>
+                            - Tối ưu hóa việc lưu trữ file ảnh (có thể dùng S3 hoặc lưu trong GridFS của Mongo).</td>
                     </tr>
                     <tr>
                         <td>Dashboard</td>
                         <td>Dev 2</td>
-                        <td>- Xây dựng giao diện cho Policy Editor (để tạo/sửa chính sách).<br>- Xây dựng giao diện xem lại ảnh chụp màn hình, xem log gõ phím.<br>- Xây dựng giao diện quản lý và hiển thị cảnh báo.</td>
-                    </tr>
-                    <tr>
-                        <td>Kiểm thử</td>
-                        <td>Tester</td>
-                        <td>- Test chuyên sâu từng tính năng giám sát mới.<br>- Test luồng tạo Policy và kiểm tra xem Agent có áp dụng đúng không.<br>- Test tính đúng đắn của hệ thống cảnh báo.</td>
-                    </tr>
-                    <tr>
-                        <td>Thiết kế</td>
-                        <td>Designer</td>
-                        <td>- Thiết kế giao diện cho Policy Editor, trang xem ảnh, trang quản lý cảnh báo.<br>- Đảm bảo UX/UI nhất quán.</td>
+                        <td>- Xây dựng giao diện cho Policy Editor (để tạo/sửa chính sách).<br>
+                            - Xây dựng giao diện xem lại ảnh chụp màn hình, xem log gõ phím.<br>
+                            - Xây dựng giao diện quản lý và hiển thị cảnh báo.</td>
                     </tr>
                 </tbody>
             </table>
@@ -184,7 +213,7 @@
     </div>
 
     <div class="plan-section">
-        <h2 class="plan-section-title">Giai đoạn 3: Tính năng Nâng cao & Hoàn thiện - (3 Tuần)</h2>
+        <h2 class="plan-section-title">Giai đoạn 3: Tính năng Nâng cao & Hoàn thiện - (Tuần 6 - 7)</h2>
         <p class="section-text"><strong>Mục tiêu:</strong> Bổ sung các tính năng "pro" và cải thiện trải nghiệm người dùng.</p>
         <details>
             <summary>Chi tiết công việc</summary>
@@ -200,27 +229,31 @@
                     <tr>
                         <td>Agent</td>
                         <td>Dev 2</td>
-                        <td>- Hoàn thiện cơ chế tự động cập nhật trong im lặng.<br>- Thêm tính năng giám sát USB.</td>
+                        <td>- Hoàn thiện cơ chế tự động cập nhật trong im lặng.<br>
+                            - Kiểm tra tối ưu về hiệu xuất để ảnh hưởng ít nhất đến người dùng.<br>
+                            - Xây dựng cơ chế tự khởi động lại khi người dùng tắt ứng dụng.</td>
                     </tr>
                     <tr>
                         <td>Server</td>
                         <td>Dev 1</td>
-                        <td>- Xây dựng hệ thống báo cáo (Reporting Engine) - xuất CSV/PDF.<br>- Xây dựng tính năng Audit Log cho quản trị viên.</td>
+                        <td>- Xây dựng hệ thống báo cáo (Reporting Engine).<br>
+                            - Biểu đồ mức độ tập trung.<br>
+                            - Áp dụng AI phân tích thời gian dùng để làm việc.
+                            - Có thể tạo và hiển thị các nhóm nhân sự.<br>
+                            - Tạo báo cáo hàng ngày/tuần/tháng.<br>
+                            - Xây dựng tính năng Audit Log cho quản trị viên.</td>
                     </tr>
                     <tr>
                         <td>Dashboard</td>
                         <td>Dev 2</td>
-                        <td>- Xây dựng giao diện cho tính năng Báo cáo (chọn tiêu chí, xuất file).<br>- Xây dựng trang xem Audit Log. Cải thiện, tối ưu các biểu đồ.</td>
-                    </tr>
-                    <tr>
-                        <td>Kiểm thử</td>
-                        <td>Tester</td>
-                        <td>- Test kỹ lưỡng tính năng tự động cập nhật.<br>- Test tính chính xác của dữ liệu trong các báo cáo được xuất ra.<br>- Bắt đầu thực hiện Performance Testing (kiểm thử hiệu năng) cơ bản.</td>
+                        <td>- Xây dựng giao diện cho tính năng Báo cáo (chọn tiêu chí, xuất file).<br>
+                            - Xây dựng trang xem Audit Log. Cải thiện, tối ưu các biểu đồ.</td>
                     </tr>
                     <tr>
                         <td>Thiết kế</td>
                         <td>Designer</td>
-                        <td>- Thiết kế giao diện cho trang báo cáo, audit log.<br>- Rà soát lại toàn bộ sản phẩm để cải thiện UX.</td>
+                        <td>- Thiết kế giao diện cho trang báo cáo, audit log.<br>
+                            - Rà soát lại toàn bộ sản phẩm để cải thiện UX.</td>
                     </tr>
                 </tbody>
             </table>
@@ -228,8 +261,8 @@
     </div>
 
     <div class="plan-section">
-        <h2 class="plan-section-title">Giai đoạn 4: Ổn định & Phát hành (Stabilization) - (2 Tuần)</h2>
-        <p class="section-text"><strong>Mục tiêu:</strong> Không thêm tính năng mới. Tập trung 100% vào sửa lỗi, tối ưu hiệu năng và chuẩn bị cho việc triển khai thực tế.</p>
+        <h2 class="plan-section-title">Giai đoạn 4: Ổn định & Phát hành (Stabilization) - (Tuần 8 - 10)</h2>
+        <p class="section-text"><strong>Mục tiêu:</strong> Không thêm tính năng mới. Tập trung hoàn thiện các tính năng vào sửa lỗi, tối ưu hiệu năng và chuẩn bị cho việc triển khai thực tế.</p>
         <details>
             <summary>Chi tiết công việc</summary>
             <table class="phase-table">
@@ -242,19 +275,24 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Sửa lỗi (Bug Fixing)</td>
+                        <td>Agent</td>
                         <td>Dev 1, Dev 2</td>
                         <td>- Xử lý toàn bộ các bug còn tồn đọng trong Jira/Trello theo thứ tự ưu tiên.</td>
                     </tr>
                     <tr>
-                        <td>Tối ưu hóa</td>
+                        <td>Server</td>
                         <td>Dev 1, Dev 2</td>
-                        <td>- Server: Tối ưu các câu lệnh truy vấn CSDL chậm, giảm bộ nhớ sử dụng.<br>- Agent: Giảm mức tiêu thụ CPU/RAM.<br>- Dashboard: Tăng tốc độ tải trang, tối ưu rendering.</td>
+                        <td>- Gửi thông báo waring cho nhân sự nếu phát hiện hành vi thiếu tập trung ( xem video không liên quan đến công việc, truy cập và đọc các trang không liên quan.).<br>
+                            - Dashboard: Tăng tốc độ tải trang, tối ưu rendering.<br>
+                            - Biểu đồ phát triển (so sánh thời điểm hiện tại với thời gian trước đó).<br>
+                            - Đặt title cho khoảng thời gian và hiển thị title đó theo timeline.</td>
                     </tr>
                     <tr>
                         <td>Kiểm thử Toàn diện</td>
                         <td>Tester</td>
-                        <td>- Thực hiện kiểm thử hồi quy (Regression Testing) toàn bộ hệ thống.<br>- Kiểm thử bảo mật (Security Testing) ở mức cơ bản (ví dụ: kiểm tra lỗ hổng XSS, SQL Injection...).<br>- Phối hợp thực hiện UAT (User Acceptance Testing) với một nhóm người dùng thử.</td>
+                        <td>- Thực hiện kiểm thử hồi quy (Regression Testing) toàn bộ hệ thống.<br>
+                            - Kiểm thử bảo mật (Security Testing) ở mức cơ bản (ví dụ: kiểm tra lỗ hổng XSS, SQL Injection...).<br>
+                            - Phối hợp thực hiện UAT (User Acceptance Testing) với một nhóm người dùng thử.</td>
                     </tr>
                     <tr>
                         <td>Hoàn thiện Tài liệu</td>
